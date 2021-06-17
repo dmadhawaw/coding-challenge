@@ -13,7 +13,7 @@ In preceding Account controller class, has defined a number of RESTful URIs as f
 ## git setup
 
 You can clone using the https url with the following command:
-    git clone https://github.com/dmadhawaw/anz-coding-challenge.git
+    git clone https://github.com/dmadhawaw/coding-challenge.git
     
 ## Setup
 

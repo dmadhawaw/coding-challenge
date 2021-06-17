@@ -1,21 +1,20 @@
 package com.anz.codingchallenge.service;
 
-//import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 import java.util.List;
-import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.anz.codingchallenge.domain.Account;
 import com.anz.codingchallenge.domain.Transaction;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@SpringBootTest
 public class AccountServiceIntegrationTest {
 
 	@Autowired
@@ -28,7 +27,9 @@ public class AccountServiceIntegrationTest {
 
 		Account accountResponse = accountService.getAccountById(accountNumber);
 		// Verify the get account by account number.
-		assertEquals("AUCurrent433", accountResponse.getAccountName());
+		assertThat(accountResponse.getAccountName(), is(equalTo("AUCurrent433")));
+		assertThat(accountResponse.getAccountType(), is(equalTo("Current")));
+		assertThat(accountResponse.getCurrency(), is(equalTo("AUD")));
 	}
 
 	@Test
@@ -36,7 +37,7 @@ public class AccountServiceIntegrationTest {
 		int customerId = 101;
 		List<Account> accounts = accountService.findByCustomerCustomerId(customerId);
 		// Verify the get accounts by customer Id.
-		assertEquals(2, accounts.size());
+		assertThat(accounts, hasSize(2));
 
 	}
 
@@ -47,7 +48,7 @@ public class AccountServiceIntegrationTest {
 
 		List<Transaction> transResponse = accountService.findByAccountAccountNumber(accountNumber);
 		// Verify the get transactions by account number.
-		assertEquals(5, transResponse.size());
+		assertThat(transResponse, hasSize(5));
 	}
 
 }

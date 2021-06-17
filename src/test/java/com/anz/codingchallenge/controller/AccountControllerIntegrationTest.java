@@ -2,10 +2,11 @@ package com.anz.codingchallenge.controller;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-
+import java.math.BigDecimal;
 import java.util.List;
-import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,13 @@ public class AccountControllerIntegrationTest {
 		// GET an account to the controller; check the outcome
 		String accountNumberStr = "585309209";
 		long accountNumber = Long.valueOf(accountNumberStr);
-		Account outcome = accounttController.getAccount(Long.valueOf(accountNumber));
+		Account account = accounttController.getAccount(Long.valueOf(accountNumber));
 
 		// Assert THAT the outcome is as expected
-		assertThat(outcome.getAccountName(), is(equalTo("SGSavings726")));
+		BigDecimal openingBalanceExpected = new BigDecimal("84327.51");
+		assertThat(account.getAccountName(), is(equalTo("SGSavings726")));
+		assertThat(account.getAccountType(), is(equalTo("Savings")));
+		assertThat(account.getOpeningBalance(), is(equalTo(openingBalanceExpected)));
 	}
 
 	@Test
@@ -39,6 +43,7 @@ public class AccountControllerIntegrationTest {
 		// GET an account to the controller; check the outcome
 		int customerId = 101;
 		List<Account> accounts = accounttController.getAllAccountsByCustomerId(customerId);
+
 		// Assert THAT the outcome is as expected
 		assertThat(accounts.size(), is(equalTo(2)));
 	}

@@ -20,6 +20,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import com.anz.codingchallenge.api.ApiResponse;
 import com.anz.codingchallenge.api.ErrorResponse;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
@@ -46,6 +47,7 @@ public class Account implements Serializable {
 	private String accountType;
 
 	@Column(name = "BALANCE_DATE")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate balanceDate;
 
 	@Column(name = "CURRENCY")

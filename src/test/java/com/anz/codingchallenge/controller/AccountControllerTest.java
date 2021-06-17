@@ -71,8 +71,8 @@ public class AccountControllerTest {
 	}
 
 	/*
-	 * This Test method test 'findByCustomerCustomerId' JSON content contains the specific
-	 * account details.
+	 * This Test method test 'findByCustomerCustomerId' JSON content contains the all
+	 * account details for given customer Id.
 	 */
 	@Test
 	void whenGetAccountsByCustomerNumber_returnJsonContent() throws Exception {
@@ -115,8 +115,8 @@ public class AccountControllerTest {
 	}
 
 	/*
-	 * This Test method test 'findByAccountAccountNumber' JSON content contains the specific
-	 * account details.
+	 * This Test method test 'whenGetTransactionsByCustomerNumber_returnJsonContent' JSON content contains the specific
+	 * transactions details.
 	 */
 	@Test
 	void whenGetTransactionsByCustomerNumber_returnJsonContent() throws Exception {

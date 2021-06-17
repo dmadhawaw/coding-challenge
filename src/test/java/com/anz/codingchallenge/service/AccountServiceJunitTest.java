@@ -1,6 +1,7 @@
 package com.anz.codingchallenge.service;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
@@ -10,12 +11,9 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 import com.anz.codingchallenge.domain.Account;
 import com.anz.codingchallenge.domain.Customer;
@@ -23,8 +21,9 @@ import com.anz.codingchallenge.domain.Transaction;
 import com.anz.codingchallenge.repo.AccountRepository;
 import com.anz.codingchallenge.repo.TransactionRepository;
 
-@ExtendWith(MockitoExtension.class)
-@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+//@ExtendWith(MockitoExtension.class)
+//@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@SpringBootTest
 public class AccountServiceJunitTest {
 
 	@Mock

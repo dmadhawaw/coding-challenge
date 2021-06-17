@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
@@ -37,6 +38,7 @@ public class Transaction implements Serializable{
 	private Long transactionId;
 	
 	@Column(name="VALUE_DATE")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate valueDate;
 	
 	@Column(name="DEBIT_AMOUNT")
