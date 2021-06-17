@@ -1,4 +1,4 @@
-package com.anz.codingchallenge.repo;
+package com.anz.codingchallenge.data.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

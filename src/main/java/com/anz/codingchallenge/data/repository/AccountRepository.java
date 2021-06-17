@@ -1,4 +1,4 @@
-package com.anz.codingchallenge.repo;
+package com.anz.codingchallenge.data.repository;
 
 import java.util.List;
 

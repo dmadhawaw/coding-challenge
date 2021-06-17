@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.anz.codingchallenge.data.repository.CustomerRepository;
 import com.anz.codingchallenge.domain.Customer;
-import com.anz.codingchallenge.repo.CustomerRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

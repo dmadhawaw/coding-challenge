@@ -15,11 +15,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.anz.codingchallenge.data.repository.AccountRepository;
+import com.anz.codingchallenge.data.repository.TransactionRepository;
 import com.anz.codingchallenge.domain.Account;
 import com.anz.codingchallenge.domain.Customer;
 import com.anz.codingchallenge.domain.Transaction;
-import com.anz.codingchallenge.repo.AccountRepository;
-import com.anz.codingchallenge.repo.TransactionRepository;
 
 //@ExtendWith(MockitoExtension.class)
 //@SpringBootTest(webEnvironment = WebEnvironment.NONE)

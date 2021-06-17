@@ -10,12 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import com.anz.codingchallenge.data.repository.AccountRepository;
+import com.anz.codingchallenge.data.repository.TransactionRepository;
 import com.anz.codingchallenge.domain.Account;
 import com.anz.codingchallenge.domain.Transaction;
 import com.anz.codingchallenge.exception.ErrorCodes;
 import com.anz.codingchallenge.exception.ResourceNotFoundException;
-import com.anz.codingchallenge.repo.AccountRepository;
-import com.anz.codingchallenge.repo.TransactionRepository;
 
 @Service
 public class AccountService {
